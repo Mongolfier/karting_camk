@@ -1,17 +1,16 @@
+import { RouterProvider } from 'react-router-dom';
+import { router } from 'shared/config/routeConfig';
+import { Header } from 'features/Header';
 import { Suspense } from 'react';
-import './App.css';
 
 function App() {
   return (
     // FIXME: Добавить фоллбэк лоадер?
     <Suspense fallback={<></>}>
       <div className="App">
-        <header className="App-header">
-        </header>
+        <Header />
 
-        <main></main>
-
-        <footer></footer>
+        <RouterProvider router={router} />
       </div>
     </Suspense>
   );

@@ -1,0 +1,22 @@
+.Logo__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 800;
+  font-style: italic;
+
+  & span {
+    display: block;
+  }
+}
+
+.Logo__firstString {
+  margin-left: 6px;
+}
+
+.Logo__icon {
+  margin-right: 15px;
+}
