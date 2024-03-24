@@ -1,0 +1,6 @@
+.NavBar {
+  display: flex;
+  margin-left: 202px;
+  gap: 50px;
+  list-style: none;
+}

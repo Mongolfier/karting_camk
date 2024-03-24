@@ -2,4 +2,13 @@
   width: 100%;
   padding: 54px 0 49px;
   border-bottom: 1px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking {
+  display: flex;
+  gap: 50px;
+  align-items: center;
 }

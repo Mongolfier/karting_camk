@@ -1,0 +1,8 @@
+.NavLink {
+  color: var(--white);
+  text-decoration: none;
+
+  &:global(.active) {
+    color: var(--red);
+  }
+}

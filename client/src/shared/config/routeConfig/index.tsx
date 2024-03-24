@@ -1,31 +1,77 @@
-import { createBrowserRouter, RouteObject } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import { Contacts } from 'pages/Contacts';
+import { WithHeaderLayout } from 'pages/layouts/WithHeaderLayout';
+import { ErrorPage } from 'pages/ErrorPage';
 
 export enum AppRoutes {
   MAIN = 'main',
   CONTACTS = 'contacts',
-  NOT_FOUND = 'not_found'
+  KARTING = 'karting',
+  SERVICES = 'services',
+  NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.CONTACTS]: '/contacts',
+  [AppRoutes.KARTING]: '/karting',
+  [AppRoutes.SERVICES]: './services',
   [AppRoutes.NOT_FOUND]: '*'
 }
 
-const routeConfig: RouteObject[] = [
+export const router = createBrowserRouter([
   {
-    path: RoutePath.main,
-    element: <>MAIN PAGE</>
+    path: "/",
+    element: <WithHeaderLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <>MAIN PAGE</>,
+      },
+      {
+        path: RoutePath.karting,
+        element: <>Картинг</>,
+      },
+      {
+        path: RoutePath.services,
+        element: <>Услуги</>,
+      },
+      {
+        path: RoutePath.contacts,
+        element: <Contacts />
+      },
+      {
+        path: RoutePath.not_found,
+        element: <>NOT FOUND</>
+      }
+    ],
   },
   {
-    path: RoutePath.contacts,
-    element: <Contacts />
+    path: "*",
+    element: <>NOT FOUND</>,
   },
-  {
-    path: RoutePath.not_found,
-    element: <>NOT FOUND</>
-  }
-];
+]);
 
-export const router = createBrowserRouter(routeConfig);
+// const routeConfig: RouteObject[] = [
+//   {
+//     path: RoutePath.main,
+//     element: <>MAIN PAGE</>
+//   },
+//   {
+//     path: RoutePath.karting,
+//     element: <>Картинг</>,
+//   },
+//   {
+//     path: RoutePath.services,
+//     element: <>Услуги</>,
+//   },
+//   {
+//     path: RoutePath.contacts,
+//     element: <Contacts />
+//   },
+//   {
+//     path: RoutePath.not_found,
+//     element: <>NOT FOUND</>
+//   }
+// ];
