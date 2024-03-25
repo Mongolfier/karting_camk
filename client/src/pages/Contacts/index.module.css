@@ -1,0 +1,19 @@
+.Contacts {
+  margin-top: 100px;
+  width: 100%;
+  background-color: var(--white-100);
+  border-radius: 25px;
+  display: flex;
+  overflow: hidden;
+}
+
+.contactsWrapper {
+  width: 100%;
+  padding: 100px 75px;
+}
+
+.map {
+  width: 1000px;
+  flex-shrink: 0;
+  background-color: pink;
+}

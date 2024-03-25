@@ -7,7 +7,13 @@ export const Nav = () => {
   return (
     <ul className={cls.NavBar}>
       {navConfig.map((navLink) => (
-        <li>{<NavLink to={navLink.link} className={cls.NavBarItem}>{navLink.title}</NavLink>}</li>
+        <li key={navLink.title} className={cls.NavBarItem}>
+          {
+            <NavLink to={navLink.link} className={cls.NavBarItem}>
+              {navLink.title}
+            </NavLink>
+          }
+        </li>
       ))}
     </ul>
   );

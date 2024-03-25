@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { Logo } from 'shared/ui/Logo';
-import { Button } from 'shared/ui/Button';
+// import { Button } from 'shared/ui/Button';
 import { Nav } from 'features/Nav';
 
 import cls from './index.module.css';
@@ -16,7 +16,7 @@ export const Header = () => {
       <div className={cls.booking}>
         <Telephone href={'+7 (929)-519-42-17'}>+7 (929)-519-42-17</Telephone> {/* TODO: принимать из запроса */}
 
-        <Button>Забронировать</Button>
+        {/* <Button>Забронировать</Button> */}
       </div>
     </header>
   );

@@ -11,8 +11,27 @@
   --red: #E41F26;
   --black: #202020;
   --white: #FFFFFF;
-  --white-50: rgba(var(--white), 0.05);
-  --white-100: rgba(var(--white, 0.1));
+  --white-50: rgba(255, 255, 255, 0.05);
+  --white-100: rgba(255, 255, 255, 0.1);
 
   --modal-z-index: 10;
+}
+
+html {
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6, h7, h8 {
+  margin: 0;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 100px;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 48px;
 }

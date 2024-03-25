@@ -1,17 +1,17 @@
 {
   "kind": "collectionType",
-  "collectionName": "news",
+  "collectionName": "telephones",
   "info": {
-    "singularName": "new",
-    "pluralName": "news",
-    "displayName": "news"
+    "singularName": "telephone",
+    "pluralName": "telephones",
+    "displayName": "Telephone"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Description": {
+    "Telephone": {
       "type": "blocks"
     }
   }
