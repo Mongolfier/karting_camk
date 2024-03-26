@@ -4,15 +4,16 @@
   "info": {
     "singularName": "telephone",
     "pluralName": "telephones",
-    "displayName": "Telephone"
+    "displayName": "Telephone",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Telephone": {
-      "type": "blocks"
+    "telephone": {
+      "type": "string"
     }
   }
 }

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.2",
+    "@tanstack/react-query": "^5.28.8",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,28 +12,38 @@
     "@types/node": "^20.10.3",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
-    "axios": "^1.6.5",
+    "@types/uuid": "^9.0.8",
+    "axios": "^1.6.8",
+    "babel-plugin-transform-typescript-metadata": "^0.3.2",
+    "customize-cra": "^1.0.0",
+    "inversify": "^6.0.2",
+    "inversify-react": "^1.1.0",
     "nuka-carousel": "^7.0.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-scripts": "5.0.1",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "reflect-metadata": "^0.2.1",
     "styled-components": "^6.1.8",
     "styled-normalize": "^8.1.0",
+    "ts-results-es": "^4.1.0",
     "typescript": "^5.3.2",
-    "web-vitals": "^2.1.0"
+    "uuid": "^9.0.1",
+    "web-vitals": "^2.1.0",
+    "yup": "^1.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "lint": "npm run lint-js && npm run lint-css",
+    "lint-js": "eslint src/ --ext .js,.jsx --max-warnings=0",
+    "lint-js-fix": "eslint src/ --ext .js,.jsx --fix",
+    "lint-css": "test $(find src/ -type f -name '*.css' | wc -l) -eq 0 || stylelint src/**/*.css",
+    "lint-css-fix": "test $(find src/ -type f -name '*.css' | wc -l) -eq 0 || stylelint src/**/*.css --fix"
   },
   "browserslist": {
     "production": [
@@ -48,6 +60,7 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.34",
     "classnames": "^2.5.1",
+    "react-app-rewired": "^2.2.1",
     "react-router-dom": "^6.21.2"
   }
 }

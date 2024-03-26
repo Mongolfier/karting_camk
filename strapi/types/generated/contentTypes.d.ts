@@ -824,12 +824,13 @@ export interface ApiTelephoneTelephone extends Schema.CollectionType {
     singularName: 'telephone';
     pluralName: 'telephones';
     displayName: 'Telephone';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Telephone: Attribute.Blocks;
+    telephone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
