@@ -3,6 +3,7 @@ import { Text } from "shared/ui/Text";
 import { ReactComponent as ClockIcon } from "shared/assets/clock.svg";
 import { ReactComponent as BusIcon } from "shared/assets/bus.svg";
 import { ReactComponent as PointIcon } from "shared/assets/point.svg";
+import { YaMap } from "features/YaMap";
 
 import cls from "./index.module.css";
 
@@ -66,7 +67,9 @@ export const Contacts = () => {
         <p></p>
       </div>
 
-      <div className={cls.map}>Карта</div>
+      <div className={cls.map}>
+        <YaMap />
+      </div>
     </section>
   );
 };
