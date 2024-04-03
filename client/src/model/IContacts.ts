@@ -1,11 +1,17 @@
-export interface ITelephones {
+export interface IContacts {
   data: {
     attributes: {
+      address: string;
       telephone: string;
       createdAt: string;
       publishedAt: string;
       updatedAt: string;
+      openingHours: string;
+      busStop: string;
+      bus: string;
+      shuttle: string;
     };
+    id: number;
   }[];
   meta: {
     page: number;

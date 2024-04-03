@@ -3,7 +3,6 @@ import {
     QueryCache,
     QueryClient,
 } from '@tanstack/react-query'
-import { injectable } from 'inversify';
 import { HttpError } from '../http/HttpError';
 
 declare module '@tanstack/react-query' {
@@ -12,7 +11,6 @@ declare module '@tanstack/react-query' {
     }
 }
 
-@injectable()
 export class DefaultQueryClient {
     client: QueryClient;
     constructor() {

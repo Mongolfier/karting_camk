@@ -5,4 +5,8 @@
   &:global(.active) {
     border-bottom: 4px solid var(--red);
   }
+
+  &:hover {
+    color: var(--white-800);
+  }
 }

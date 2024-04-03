@@ -1,5 +1,4 @@
 import type { AxiosRequestConfig, AxiosResponse } from "axios";
-import { interfaces } from "inversify";
 
 import type { Result } from "ts-results-es";
 import type { Schema } from "yup";
@@ -11,7 +10,6 @@ export type HttpConfig<T = unknown, D = unknown> = AxiosRequestConfig<D> & {
   responseBodySchema?: Schema<T>;
 };
 
-export const HttpClient: interfaces.ServiceIdentifier<HttpClient> = Symbol('HttpClient');
 export interface HttpClient {
 
   get<T = unknown, E = unknown>(

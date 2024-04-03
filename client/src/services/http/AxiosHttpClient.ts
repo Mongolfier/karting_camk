@@ -4,7 +4,6 @@ import axios, {
   type CreateAxiosDefaults,
   isAxiosError
 } from "axios";
-import { inject, injectable, interfaces } from 'inversify';
 import { Err, Ok } from "ts-results-es";
 import {
   HttpError,
@@ -17,14 +16,12 @@ import {
 } from "./HttpError";
 import { HttpClient, HttpConfig, ApiResult } from "./HttpClient";
 
-export const AxiosHttpClientDefaults: interfaces.ServiceIdentifier<AxiosHttpClientDefaults>  = Symbol('AxiosHttpClientDefaults');
 export type AxiosHttpClientDefaults = CreateAxiosDefaults;
 
-@injectable()
-export class AxiosHttpClient implements HttpClient {
+export class AxiosHttpClientClass implements HttpClient {
   private _apiUrl: string = "";
   private axiosInstance: AxiosInstance
-  constructor(@inject(AxiosHttpClientDefaults) config?: AxiosHttpClientDefaults) { 
+  constructor(config?: AxiosHttpClientDefaults) { 
     this.axiosInstance = axios.create(config);
   }
 
@@ -196,3 +193,10 @@ export class AxiosHttpClient implements HttpClient {
     );
   }
 }
+
+export const AxiosHttpClient = new AxiosHttpClientClass({
+  baseURL: process.env.REACT_APP_API_HOST,
+  headers: {
+    'Authorization': `Bearer ${process.env.REACT_APP_BEARER}`
+  }
+});

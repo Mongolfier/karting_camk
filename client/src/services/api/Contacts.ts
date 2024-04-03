@@ -1,14 +1,10 @@
+import { AxiosHttpClient } from "services/http/AxiosHttpClient";
 import { HttpClient } from "../http/HttpClient";
-import * as yup from "yup";
-import { Links } from "../../model/Link";
-import { inject, injectable } from "inversify";
-import { IUserProfile } from "../../model/IUserProfile";
-import { ITelephones } from "model/ITelephones";
+import { IContacts } from "model/IContacts";
 
-@injectable()
-export class Telephones {
+export class ContactsClass {
   httpClient: HttpClient;
-  constructor(@inject(HttpClient) httpClient: HttpClient) {
+  constructor(httpClient: HttpClient) {
     this.httpClient = httpClient;
   }
   // getLinks() {
@@ -31,7 +27,9 @@ export class Telephones {
   //   });
   // }
 
-  getTelephone() {
-    return this.httpClient.get<ITelephones>("/api/telephones");
+  getContacts() {
+    return this.httpClient.get<IContacts>("/api/contacts");
   }
 }
+
+export const Contacts = new ContactsClass(AxiosHttpClient);

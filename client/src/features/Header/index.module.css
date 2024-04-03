@@ -1,5 +1,6 @@
 .Header {
   width: 100%;
+  max-width: 1720px;
   padding: 54px 0 49px;
   border-bottom: 1px solid var(--red);
   display: flex;
@@ -11,4 +12,13 @@
   display: flex;
   gap: 50px;
   align-items: center;
+}
+
+.headerNav {
+  gap: 50px;
+  margin-left: 200px;
+}
+
+.headerLogo {
+  color: var(--red);
 }

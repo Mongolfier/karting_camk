@@ -16,3 +16,19 @@
   width: 1000px;
   flex-shrink: 0;
 }
+
+.arrow {
+  margin-right: 10px;
+  color: var(--red);
+}
+
+.buttonBack {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--white-800);
+  }
+}

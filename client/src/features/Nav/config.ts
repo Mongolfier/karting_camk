@@ -5,16 +5,16 @@ interface NavConfigIte {
 
 export const navConfig: NavConfigIte[] = [
     {
-        title: 'Прокат',
+        title: 'Главная',
         link: '/'
-    },
-    {
-        title: 'Занятие картингом',
-        link: '/karting',
     },
     {
         title: 'Услуги',
         link: '/services',
+    },
+    {
+        title: 'Новости',
+        link: '/karting',
     },
     {
         title: 'Контакты',
