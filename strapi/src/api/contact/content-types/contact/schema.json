@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contacts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "busStop": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "bus": {
+      "type": "string"
+    },
+    "shuttle": {
+      "type": "string"
+    },
+    "openingHours": {
+      "type": "string"
+    },
+    "supportEmail": {
+      "type": "email"
+    }
+  }
+}

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * telephone router
+ * contact router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::telephone.telephone');
+module.exports = createCoreRouter('api::contact.contact');
