@@ -1,15 +1,31 @@
 .Contacts {
   margin-top: 100px;
   width: 100%;
-  background-color: var(--white-100);
+  background-color: var(--white-50);
   border-radius: 25px;
   display: flex;
   overflow: hidden;
 }
 
+.heading {
+  font-style: normal;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 62px;
+}
+
+.contactsIcon {
+  color: var(--red);
+}
+
 .contactsWrapper {
   width: 100%;
-  padding: 100px 75px;
+  height: 100%;
+  padding: 50px 0;
+}
+
+.block {
+  padding: 45px 75px;  
 }
 
 .map {
@@ -31,4 +47,109 @@
   &:hover {
     color: var(--white-800);
   }
+}
+
+.contactsTelephonesList {
+  list-style: none;
+  display: flex;
+  margin-bottom: 37px;
+}
+
+.address {
+  font-size: 30px;
+}
+
+.contactsTelephone {
+  font-size: 30px;
+}
+
+.redDot {
+  margin: 0 18px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+  flex-shrink: 1;
+}
+
+.contactsTelephoneItem {
+  display: flex;
+  align-items: center;
+}
+
+.semibold {
+  font-weight: 500;
+  margin: 0;
+}
+
+.workingHours {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.contactsBlock {
+  padding: 50px 0;
+  border-bottom: 1px solid var(--white-100);
+
+  &.scheme {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: 48px 1fr 20px 48px;
+    grid-template-areas:
+      "busIcon buses"
+      "dots buses"
+      "dots ."
+      "busStopIcon busStop";
+  }
+}
+
+.dots {
+  height: 70%;
+  grid-area: dots;
+  padding: 18px 0;
+  background-image: url('../../shared/assets/dot.svg');
+  background-position: center top;
+  background-repeat: no-repeat space;
+  place-self: center stretch;
+}
+
+.busIcon {
+  grid-area: busIcon;
+}
+
+.buses {
+  grid-area: buses;
+  padding-left: 30px;
+  padding-bottom: 40px;
+}
+
+.busStopIcon {
+  grid-area: busStopIcon;
+  margin-left: 4px;
+}
+
+.busStop {
+  grid-area: busStop;
+  padding-left: 30px;
+}
+
+.transportText {
+  display: flex;
+  margin: 0;
+  font-size: 24px;
+}
+
+.transportName {
+  margin: 0 10px 0 0;
+}
+
+.hours {
+  display: flex;
+  gap: 50px;
+}
+
+.noMargin {
+  margin: 0;
 }

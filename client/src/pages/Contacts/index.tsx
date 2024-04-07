@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { YaMap } from "features/YaMap";
 import { Telephone } from "shared/ui/Telephone";
 import { Text } from "shared/ui/Text";
+import cn from "classnames";
 import { ContactsServiceService } from "services/ContactsService";
 import { ReactComponent as ClockIcon } from "shared/assets/clock.svg";
 import { ReactComponent as BusIcon } from "shared/assets/bus.svg";
@@ -12,9 +13,7 @@ import { ReactComponent as ArrowIcon } from "shared/assets/arrow.svg";
 import cls from "./index.module.css";
 
 export const Contacts = () => {
-  const { data: result } = useQuery(
-    ContactsServiceService.getContactsQuery()
-  );
+  const { data: result } = useQuery(ContactsServiceService.getContactsQuery());
   const contacts = result?.data[0].attributes!;
 
   if (!contacts) {
@@ -30,35 +29,44 @@ export const Contacts = () => {
 
   return (
     <section className={cls.contactsWrapper}>
-      <Link to={'/'} className={cls.buttonBack}><ArrowIcon className={cls.arrow} />Главная</Link>
+      <Link to={"/"} className={cls.buttonBack}>
+        <ArrowIcon className={cls.arrow} />
+        Главная
+      </Link>
 
       <div className={cls.Contacts}>
-
-        <div className={cls.contactsWrapper}>
-          <div>
-            <h2>Контакты:</h2>
+        <div className={cls.block}>
+          <div className={cls.contactsBlock}>
+            <h1 className={cls.heading}>Контакты:</h1>
             <div>
-              <ul>
-                {telephones?.map((telephone) => (
-                  <li>
-                    <Telephone href={telephone}>{telephone}</Telephone>
+              <ul className={cls.contactsTelephonesList}>
+                {telephones?.map((telephone, index) => (
+                  <li className={cls.contactsTelephoneItem} key={telephone}>
+                    {index !== 0 && <span className={cls.redDot} />}
+                    <Telephone
+                      className={cls.contactsTelephone}
+                      href={telephone}
+                    >
+                      {telephone}
+                    </Telephone>
                   </li>
                 ))}
               </ul>
-              <Text>{address}</Text>
+              <Text className={cn(cls.semibold, cls.address)}>{address}</Text>
             </div>
           </div>
 
-          <div>
-            <Text type={"semibold"}>
-              <ClockIcon className={cls.clock} /> Часы работы:
+          <div className={cls.contactsBlock}>
+            <Text className={cls.workingHours} type={"semibold"}>
+              <ClockIcon className={cn(cls.clock, cls.contactsIcon)} />
+              Режим работы:
             </Text>
 
-            <div>
+            <div className={cls.hours}>
               {openingHours?.map((hours) => (
-                <div>
+                <div key={hours}>
                   {hours.split("&").map((item, index) => (
-                    <Text type={index === 0 ? "semibold" : undefined}>
+                    <Text type={index === 0 ? "semibold" : undefined} className={cls.noMargin} key={item}>
                       {item}
                     </Text>
                   ))}
@@ -67,18 +75,29 @@ export const Contacts = () => {
             </div>
           </div>
 
-          <div>
-            <BusIcon />
-            <Text>
-              <Text type="semibold">Автобусы:</Text>
-              {buses}
-            </Text>
-            <Text>
-              <Text type="semibold">Маршрутное такси:</Text>
-              {shuttles}
-            </Text>
-            <PointIcon />
-            <Text>{busStop}</Text>
+          <div className={cn(cls.contactsBlock, cls.scheme)}>
+            <BusIcon className={cn(cls.contactsIcon, cls.busIcon)} />
+
+            <div className={cls.dots} />
+
+            <div className={cls.buses}>
+              <div className={cls.transportText}>
+                <Text className={cls.transportName} type="semibold">
+                  Автобусы:
+                </Text>
+                {buses}
+              </div>
+
+              <div className={cls.transportText}>
+                <Text className={cls.transportName} type="semibold">
+                  Маршрутное такси:
+                </Text>
+                {shuttles}
+              </div>
+            </div>
+
+            <PointIcon className={cn(cls.contactsIcon, cls.busStopIcon)} />
+            <Text className={cls.busStop}>{busStop}</Text>
           </div>
 
           <p></p>

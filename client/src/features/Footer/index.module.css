@@ -34,6 +34,7 @@
 .footerBlock {
   width: 100%;
   height: 100%;
+  position: relative;
   &:not(:last-child) {
     border-right: 2px solid var(--white-100);
     padding-right: 75px;
@@ -41,4 +42,25 @@
   &:not(:first-child) {
     padding-left: 75px;
   }
+}
+
+.footerLogo {
+  margin-bottom: 50px;
+}
+
+.divider {
+  width: 50px;
+  border-color: var(--white-100);
+}
+
+.subscription,
+.support {
+  font-size: var(--font-size-s);
+  margin: 0;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -1,9 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
+import { isDesktop } from "react-device-detect";
+import cn from "classnames";
+import { ContactsServiceService } from "services/ContactsService";
 import { Nav } from "features/Nav";
+import { Text } from "shared/ui/Text";
 import { Logo } from "shared/ui/Logo";
 
 import cls from "./index.module.css";
 
 export const Footer = () => {
+  const { data: result } = useQuery(ContactsServiceService.getContactsQuery());
+  const supportEmail = result?.data[0].attributes.supportEmail;
+
   return (
     <section className={cls.Footer}>
       <h2 className={"visually-hidden"}>Подвал/футер сайта</h2>
@@ -16,8 +24,17 @@ export const Footer = () => {
           <h3 className={cls.footerHeader}>Карта сайта</h3>
           <Nav className={cls.footerNav} classNameItem={cls.footerNavItem} />
         </div>
-        <div className={cls.footerBlock}>
-          <Logo />
+        <div className={cn(cls.footerBlock, cls.textBlock)}>
+          <Logo containerClassName={cls.footerLogo} />
+
+          <Text className={cls.subscription}>ПОУ ЦАМК ДОСААФ России, 2024</Text>
+
+          {isDesktop && <hr className={cls.divider} />}
+
+          <Text className={cls.support}>
+            По вопросам пожеланиям и ошибкам на сайте пишите на почту&nbsp;
+            <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+          </Text>
         </div>
       </div>
     </section>

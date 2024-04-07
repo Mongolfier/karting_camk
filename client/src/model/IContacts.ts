@@ -10,6 +10,7 @@ export interface IContacts {
       busStop: string;
       bus: string;
       shuttle: string;
+      supportEmail: string;
     };
     id: number;
   }[];
