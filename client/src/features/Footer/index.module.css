@@ -1,6 +1,7 @@
 .Footer {
   width: 100%;
   border-top: 2px solid var(--red);
+  padding: 0 100px;
   display: flex;
   justify-content: center;
   justify-content: center;
@@ -44,6 +45,11 @@
   }
 }
 
+.logoIcon {
+  width: 50px;
+  height: 50px;
+}
+
 .footerLogo {
   margin-bottom: 50px;
 }
@@ -63,4 +69,114 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.link {
+  color: var(--white);
+
+  &:hover {
+    color: var(--white-800);
+  }
+}
+
+.footerTelephonesList {
+  list-style: none;
+  display: flex;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.contactsTelephone {
+  font-size: 24px;
+}
+
+.contactsTelephoneItem {
+  display: flex;
+  align-items: center;
+}
+
+.redDot {
+  margin: 0 18px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .Footer {
+    padding: 0 30px;
+  }
+
+  .footerNavItem,
+  .contactsTelephone {
+    font-size: 14px;
+  }
+
+  .footerHeader,
+  .address {
+    font-size: 18px;
+  }
+
+  .footerHeader {
+    margin-bottom: 25px;
+  }
+
+  .footerLogo {
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .footerWrapper {
+    padding: 0;
+  }
+
+  .Footer,
+  .footerWrapper {
+    flex-direction: column;
+  }
+
+  .footerNav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .subscription {
+    margin-bottom: 20px;
+  }
+
+  .logoIcon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .firstLexem {
+    margin-left: 3px;
+  }
+
+  .subscription,
+  .support,
+  .link {
+    font-size: 10px;
+  }
+
+  .redDot {
+    width: 4px;
+    height: 4px;
+    margin: 0 10px;
+  }
+
+  .footerBlock {
+    &:not(:last-child) {
+      border-right: none;
+      border-bottom: 2px solid var(--white-100);
+      padding: 30px 0;
+    }
+    &:not(:first-child) {
+      padding: 30px 0;
+    }
+  }
 }

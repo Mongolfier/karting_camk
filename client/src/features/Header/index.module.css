@@ -20,5 +20,7 @@
 }
 
 .headerLogo {
+  width: 63px;
+  height: 63px;
   color: var(--red);
 }
