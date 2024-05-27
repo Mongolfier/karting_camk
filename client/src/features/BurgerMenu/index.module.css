@@ -1,0 +1,32 @@
+.burgerMenu {
+  position: fixed;
+  top: 87px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 87px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.burgerMenuNav {
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--black);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.burgerMenuNavItem {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 25px 30px;
+
+  &:global(.active) {
+    border: none;
+    background-color: var(--red);
+    color: var(--white);
+  }
+}

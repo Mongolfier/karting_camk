@@ -24,3 +24,41 @@
   height: 63px;
   color: var(--red);
 }
+
+.call {
+  display: block;
+  padding: 12px 10px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .Header {
+    position: sticky;
+    top: 0;
+    padding: 25px 30px;
+    background-color: var(--black);
+    z-index: 99;
+  }
+
+  .headerLogo {
+    width: 31px;
+    height: 31px;
+  }
+
+  .logoText {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .logoFirstLexem {
+    margin-left: 3px;
+  }
+}

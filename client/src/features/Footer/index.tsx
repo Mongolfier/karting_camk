@@ -16,9 +16,7 @@ export const Footer = () => {
   const address = result?.data[0].attributes.address;
 
   return (
-    <section className={cls.Footer}>
-      <h2 className={"visually-hidden"}>Подвал/футер сайта</h2>
-
+    <footer className={cls.Footer}>
       <div className={cls.footerWrapper}>
         <div className={cls.footerBlock}>
           <h3 className={cls.footerHeader}>Контакты</h3>
@@ -59,6 +57,6 @@ export const Footer = () => {
           </Text>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };

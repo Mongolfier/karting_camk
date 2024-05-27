@@ -1,9 +1,9 @@
 .Footer {
+  margin-top: auto;
   width: 100%;
   border-top: 2px solid var(--red);
   padding: 0 100px;
   display: flex;
-  justify-content: center;
   justify-content: center;
   background-color: var(--white-50);
 }

@@ -1,14 +1,24 @@
+import { FC } from "react";
 import cn from "classnames";
+import { useQuery } from "@tanstack/react-query";
+import { isDesktop } from "react-device-detect";
+
 import { Logo } from "shared/ui/Logo";
-// import { Button } from 'shared/ui/Button';
 import { Nav } from "features/Nav";
 import { Telephone } from "shared/ui/Telephone";
-import { useQuery } from "@tanstack/react-query";
 import { ContactsServiceService } from "services/ContactsService";
+import { BurgerMenuButton } from "features/BurgerMenuButton";
 
+import buttonCls from 'shared/ui/Button/index.module.css';
 import cls from "./index.module.css";
 
-export const Header = () => {
+export interface HeaderProps {
+  isBurgerOpen: boolean;
+  handleBurgerClick: () => void;
+}
+export const Header: FC<HeaderProps> = (props) => {
+  const { isBurgerOpen, handleBurgerClick } = props;
+
   const { data: contacts } = useQuery(
     ContactsServiceService.getContactsQuery()
   );
@@ -16,13 +26,22 @@ export const Header = () => {
 
   return (
     <header className={cn(cls.Header)}>
-      <Logo className={cls.headerLogo} />
+      <Logo className={cn(cls.headerLogo)} textClassName={cls.logoText} firstLexemClassName={cls.logoFirstLexem} />
 
-      <Nav className={cls.headerNav} />
-
+      {isDesktop && <Nav className={cls.headerNav} />}
+      
       <div className={cls.booking}>
-        <Telephone href={firtsTelephone}>{firtsTelephone}</Telephone>
-        {/* <Button>Забронировать</Button> */}
+        {isDesktop ? (
+          <Telephone href={firtsTelephone}>{firtsTelephone}</Telephone>
+        ) : (
+          <div className={cls.rightSide}>
+            <a className={cn(buttonCls.Button, cls.call)} href={`tel:${firtsTelephone}`}>Позвонить</a>
+            <BurgerMenuButton
+              isOpen={isBurgerOpen}
+              handleIsOpenClick={handleBurgerClick}
+            />
+          </div>
+        )}
       </div>
     </header>
   );

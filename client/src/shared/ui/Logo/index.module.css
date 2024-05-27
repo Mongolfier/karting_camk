@@ -20,3 +20,10 @@
 .Logo__icon {
   margin-right: 15px;
 }
+
+@media (max-width: 1024px) {
+  .Logo__icon {
+    width: 30px;
+    height: 30px;
+  }
+}
