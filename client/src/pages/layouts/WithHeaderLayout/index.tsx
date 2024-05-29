@@ -17,15 +17,17 @@ export const WithHeaderLayout = () => {
   return (
     <>
       <div className={cls.WithHeaderLayout}>
-        <Header
-          handleBurgerClick={handleBurgerClick}
-          isBurgerOpen={isBurgerOpen}
-        />
-        <main className={cls.content}>
-          <Outlet />
+        <div className={cls.container}>
+          <Header
+            handleBurgerClick={handleBurgerClick}
+            isBurgerOpen={isBurgerOpen}
+          />
+          <main className={cls.content}>
+            <Outlet />
 
-          {isBurgerOpen && <BurgerMenu isOpen={isBurgerOpen} />}
-        </main>
+            {isBurgerOpen && <BurgerMenu isOpen={isBurgerOpen} />}
+          </main>
+        </div>
         <Footer />
       </div>
     </>

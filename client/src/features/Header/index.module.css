@@ -1,6 +1,5 @@
 .Header {
   width: 100%;
-  max-width: 1720px;
   padding: 54px 0 49px;
   border-bottom: 1px solid var(--red);
   display: flex;
@@ -16,7 +15,6 @@
 
 .headerNav {
   gap: 50px;
-  margin-left: 200px;
 }
 
 .headerLogo {
@@ -39,7 +37,7 @@
   align-items: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .Header {
     position: sticky;
     top: 0;

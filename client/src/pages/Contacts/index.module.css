@@ -1,5 +1,5 @@
 .Contacts {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100%;
   background-color: var(--white-50);
   border-radius: 25px;
@@ -28,7 +28,7 @@
   padding: 45px 75px;  
 }
 
-.map {
+.mapWrapper {
   width: 1000px;
   flex-shrink: 0;
 }
@@ -43,6 +43,8 @@
   align-items: center;
   color: var(--white);
   text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
 
   &:hover {
     color: var(--white-800);
@@ -53,6 +55,7 @@
   list-style: none;
   display: flex;
   margin-bottom: 37px;
+  flex-wrap: wrap;
 }
 
 .address {
@@ -63,6 +66,11 @@
   font-size: 30px;
 }
 
+.clock {
+  width: 48px;
+  height: 48px;
+}
+
 .redDot {
   margin: 0 18px;
   display: block;
@@ -70,7 +78,7 @@
   height: 10px;
   background-color: var(--red);
   border-radius: 50%;
-  flex-shrink: 1;
+  flex-shrink: 0;
 }
 
 .contactsTelephoneItem {
@@ -117,6 +125,8 @@
 
 .busIcon {
   grid-area: busIcon;
+  width: 52px;
+  height: 48px;
 }
 
 .buses {
@@ -133,10 +143,13 @@
 .busStop {
   grid-area: busStop;
   padding-left: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .transportText {
   display: flex;
+  align-items: end;
   margin: 0;
   font-size: 24px;
 }
@@ -152,4 +165,104 @@
 
 .noMargin {
   margin: 0;
+}
+
+.busStopIcon {
+  width: 38px;
+  height: 48px;
+}
+
+@media (max-width: 1200px) {
+  .Contacts {
+    margin-top: 40px;
+    flex-direction: column;
+  }
+
+  .buttonBack {
+    margin-left: 30px;
+  }
+
+  .block {
+    padding: 10px 30px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .contactsBlock {
+    padding: 25px 0;
+
+    &.scheme {
+      grid-template-columns: 26px 1fr;
+      grid-template-rows: 24px 1fr 10px 24px;
+      grid-template-areas:
+        "busIcon buses"
+        "dots buses"
+        "dots ."
+        "busStopIcon busStop";
+    }
+  }
+
+  .contactsTelephone,
+  .address {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .workingHours {
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .clock {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hours p {
+    font-size: 14px;
+  }
+
+  .busIcon {
+    width: 26px;
+    height: 24px;
+  }
+
+  .busStopIcon {
+    width: 19px;
+    height: 24px;
+  }
+
+  .transportText,
+  .busStop {
+    font-size: 14px;
+
+    & p {
+      font-size: 14px;
+    }
+  }
+
+  .busStop {
+    padding-left: 13px;
+    margin-bottom: 0;
+  }
+
+  .buses {
+    padding-bottom: 24px;
+    padding-left: 13px;
+  }
+
+  .mapWrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .map {
+    height: 300px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+  }
 }

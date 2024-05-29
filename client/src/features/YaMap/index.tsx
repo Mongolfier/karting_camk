@@ -1,4 +1,12 @@
-export const YaMap = () => {
+import { FC } from "react";
+
+export interface YaMapProps {
+  className?: string;
+}
+
+export const YaMap: FC<YaMapProps> = (props) => {
+  const { className } = props;
+  
   return (
     <div style={{ position: "relative", height: "100%", overflow: "hidden" }}>
       <a
@@ -41,6 +49,7 @@ export const YaMap = () => {
         frameBorder="1"
         allowFullScreen={true}
         style={{ position: "relative" }}
+        className={className}
       ></iframe>
     </div>
   );

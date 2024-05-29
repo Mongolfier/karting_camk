@@ -141,7 +141,23 @@
 
   .footerNav {
     flex-direction: row;
-    justify-content: space-between;
+
+    & li {
+      position: relative;
+      
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: 50%;
+        right: -15px;
+        transform: translateY(-50%);
+        background-color: var(--red);
+        border-radius: 50%;
+      }
+    }
+    
   }
 
   .subscription {

@@ -103,8 +103,8 @@ export const Contacts = () => {
           <p></p>
         </div>
 
-        <div className={cls.map}>
-          <YaMap />
+        <div className={cls.mapWrapper}>
+          <YaMap className={cls.map} />
         </div>
       </div>
     </section>
