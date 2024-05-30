@@ -13,6 +13,7 @@
   --white: #FFFFFF;
   --white-50: rgba(255, 255, 255, 0.05);
   --white-100: rgba(255, 255, 255, 0.1);
+  --white-500: rgba(255, 255, 255, 0.5);
   --white-800: rgba(255, 255, 255, 0.8);
 
   --modal-z-index: 10;

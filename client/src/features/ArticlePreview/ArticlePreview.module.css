@@ -1,0 +1,44 @@
+.articlePreview {
+  display: flex;
+  padding: 75px 0;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--white-100);
+  }
+}
+
+.preview {
+  width: 420px;
+  height: 279px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+  border: 1px solid #4d4d4d;
+  margin-right: 50px;
+}
+
+.publishDate {
+  color: var(--white-500);
+  margin-bottom: 20px;
+}
+
+.articleLink {
+  position: relative;
+  color: var(--white);
+  text-decoration-line: underline;
+  text-decoration-color: var(--red);
+  text-decoration-skip-ink: none;
+  display: block;
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  width: 485px;
+
+  &:hover {
+    color: var(--white-800);
+  }
+}
+
+.content {
+  width: 528px;
+  font-size: 24px;
+}
