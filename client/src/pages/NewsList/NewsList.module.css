@@ -1,0 +1,10 @@
+.articleList {
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .articleList {
+    padding: 0 30px;
+    margin: 40px 0;
+  }
+}

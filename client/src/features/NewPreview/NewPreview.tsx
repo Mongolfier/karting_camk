@@ -1,49 +1,53 @@
 import { FC } from "react";
 import { format } from "date-fns";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { IArticle } from "model/IArticles";
+import { INew } from "model/INews";
 import MultiClamp from "react-multi-clamp";
 
-import cls from "./ArticlePreview.module.css";
+import cls from "./NewPreview.module.css";
 import { RoutePath } from "shared/config/routeConfig";
+import { ReactComponent as EmptyImage } from "shared/assets/photo_placeholder.svg";
 
 export interface ArticlePreviewProps {
-  article: IArticle;
+  article: INew;
 }
 
-export const ArticlePreview: FC<ArticlePreviewProps> = (props) => {
+export const NewPreview: FC<ArticlePreviewProps> = (props) => {
   const { article } = props;
   const baseUrl = process.env.REACT_APP_API_HOST;
 
   const publishDate = format(
     new Date(article.attributes.publishDate),
-    "dd.MM.yyyy hh:mm"
+    "dd.MM.yyyy HH:mm"
   );
+
   const imageUrl = article.attributes.banner.data
     ? `${baseUrl}${article.attributes.banner.data.attributes.formats.medium.url}`
     : undefined;
   const title = article.attributes.title;
-  const articleLink = RoutePath.article.replace(':id', String(article.id));
+  const articleLink = RoutePath.article.replace(":id", String(article.id));
 
   return (
     <li className={cls.articlePreview}>
-      {imageUrl && (
-        <a href={articleLink}>
+      <a href={articleLink}>
+        {imageUrl ? (
           <img
             alt={`Превью статьи '${title}'`}
             src={imageUrl}
             className={cls.preview}
           />
-        </a>
-      )}
+        ) : (
+          <EmptyImage className={cls.preview} />
+        )}
+      </a>
 
       <div className={cls.contentWrapper}>
         <p className={cls.publishDate}>{publishDate}</p>
-        <MultiClamp ellipsis="..." clamp={2}>
-          <a href={articleLink} className={cls.articleLink}>
+        <a href={articleLink} className={cls.articleLink}>
+          <MultiClamp ellipsis="..." clamp={2}>
             {title}
-          </a>
-        </MultiClamp>
+          </MultiClamp>
+        </a>
 
         <div className={cls.content}>
           <MultiClamp ellipsis="..." clamp={3}>

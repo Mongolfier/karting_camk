@@ -10,7 +10,7 @@ interface IFaromatImage {
   width: number;
 }
 
-export interface IArticle {
+export interface INew {
   attributes: {
     title: string;
     banner: {
@@ -46,8 +46,18 @@ export interface IArticle {
   id: number;
 }
 
-export interface IArticles {
-  data: IArticle[];
+export interface INews {
+  data: INew[];
+  meta: {
+    page: number;
+    pageSize: number;
+    pageCount: number;
+    total: number;
+  };
+}
+
+export interface ISingleNew {
+  data: INew;
   meta: {
     page: number;
     pageSize: number;

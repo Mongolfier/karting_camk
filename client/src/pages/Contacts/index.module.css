@@ -33,24 +33,6 @@
   flex-shrink: 0;
 }
 
-.arrow {
-  margin-right: 10px;
-  color: var(--red);
-}
-
-.buttonBack {
-  display: inline-flex;
-  align-items: center;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 21px;
-
-  &:hover {
-    color: var(--white-800);
-  }
-}
-
 .contactsTelephonesList {
   list-style: none;
   display: flex;
@@ -149,7 +131,7 @@
 
 .transportText {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   margin: 0;
   font-size: 24px;
 }

@@ -1,6 +1,6 @@
 .articlePreview {
   display: flex;
-  padding: 75px 0;
+  padding: 50px 0;
   &:not(:last-child) {
     border-bottom: 1px solid var(--white-100);
   }
@@ -32,6 +32,7 @@
   line-height: 1.2;
   margin-bottom: 25px;
   width: 485px;
+  word-wrap: break-word;
 
   &:hover {
     color: var(--white-800);
@@ -41,4 +42,33 @@
 .content {
   width: 528px;
   font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .preview {
+    width: 120px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 10px;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .articleLink {
+    width: auto;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .articlePreview {
+    border: none !important;
+    padding: 10px 0;
+  }
+
+  .publishDate {
+    font-size: 10px;
+    margin-bottom: 14px;
+  }
 }

@@ -375,7 +375,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    banner: Attribute.Media & Attribute.Required;
+    banner: Attribute.Media;
     content: Attribute.Blocks & Attribute.Required;
     publishDate: Attribute.DateTime & Attribute.Required;
     createdAt: Attribute.DateTime;

@@ -1,0 +1,27 @@
+.buttonBack {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+
+  &:hover {
+    color: var(--white-800);
+  }
+}
+
+.arrow {
+  margin-right: 10px;
+  color: var(--red);
+}
+
+@media (max-width: 1200px) {
+  .buttonBack {
+    margin-left: 30px;
+  }
+
+  .buttonBack {
+    font-size: 14px;
+  }
+}

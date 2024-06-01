@@ -2,7 +2,9 @@ import { createBrowserRouter } from 'react-router-dom'
 import { Contacts } from 'pages/Contacts';
 import { WithHeaderLayout } from 'pages/layouts/WithHeaderLayout';
 import { ErrorPage } from 'pages/ErrorPage';
-import { ArticleList } from 'pages/ArticleList/ArticleList';
+
+import { NewsList } from 'pages/NewsList/NewsList';
+import { New } from 'pages/New/New';
 
 export enum AppRoutes {
   MAIN = 'main',
@@ -10,7 +12,7 @@ export enum AppRoutes {
   KARTING = 'karting',
   SERVICES = 'services',
   NOT_FOUND = 'not_found',
-  ARTICLE = 'article',
+  ARTICLE = 'article'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -30,11 +32,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <ArticleList />,
+        element: <NewsList />,
       },
       {
         path: RoutePath.article,
-        element: <>Статья</>
+        element: <New />
       },
       // {
       //   path: RoutePath.karting,

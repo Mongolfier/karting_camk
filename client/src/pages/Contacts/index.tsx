@@ -8,9 +8,9 @@ import { ContactsServiceService } from "services/ContactsService";
 import { ReactComponent as ClockIcon } from "shared/assets/clock.svg";
 import { ReactComponent as BusIcon } from "shared/assets/bus.svg";
 import { ReactComponent as PointIcon } from "shared/assets/point.svg";
-import { ReactComponent as ArrowIcon } from "shared/assets/arrow.svg";
 
 import cls from "./index.module.css";
+import { BackButton } from "shared/ui/BackButton/BackButton";
 
 export const Contacts = () => {
   const { data: result } = useQuery(ContactsServiceService.getContactsQuery());
@@ -29,10 +29,7 @@ export const Contacts = () => {
 
   return (
     <section className={cls.contactsWrapper}>
-      <Link to={"/"} className={cls.buttonBack}>
-        <ArrowIcon className={cls.arrow} />
-        Главная
-      </Link>
+      <BackButton to="/">Главная</BackButton>
 
       <div className={cls.Contacts}>
         <div className={cls.block}>

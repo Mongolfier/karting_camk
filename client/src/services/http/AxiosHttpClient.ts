@@ -196,7 +196,4 @@ export class AxiosHttpClientClass implements HttpClient {
 
 export const AxiosHttpClient = new AxiosHttpClientClass({
   baseURL: process.env.REACT_APP_API_HOST,
-  headers: {
-    'Authorization': `Bearer ${process.env.REACT_APP_BEARER}`
-  }
 });
