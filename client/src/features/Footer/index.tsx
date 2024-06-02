@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { isDesktop } from "react-device-detect";
 import cn from "classnames";
-import { ContactsServiceService } from "services/ContactsService";
+import { ContactsService } from "services/ContactsService";
 import { Nav } from "features/Nav";
 import { Text } from "shared/ui/Text";
 import { Logo } from "shared/ui/Logo";
@@ -10,7 +10,7 @@ import { Telephone } from "shared/ui/Telephone";
 import cls from "./index.module.css";
 
 export const Footer = () => {
-  const { data: result } = useQuery(ContactsServiceService.getContactsQuery());
+  const { data: result } = useQuery(ContactsService.getContactsQuery());
   const supportEmail = result?.data[0].attributes.supportEmail;
   const telephones = result?.data[0].attributes.telephone.split("&");
   const address = result?.data[0].attributes.address;

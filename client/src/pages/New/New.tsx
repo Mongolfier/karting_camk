@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import { useParams } from "react-router-dom";
 import { NewsService } from "services/NewsService";
-import { RoutePath } from "shared/config/routeConfig";
 
 import cls from "./New.module.css";
 import { BackButton } from "shared/ui/BackButton/BackButton";

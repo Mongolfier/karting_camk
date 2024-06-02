@@ -5,11 +5,11 @@ import { News, NewsClass } from "./api/News";
 import { INews, ISingleNew } from "model/INews";
 
 class NewsServiceClass {
-  protected _queryKeys = {
-    all: () => ["news"],
-    news: () => [...this._queryKeys.all(), "news"],
-    new: () => [...this._queryKeys.all(), "new"],
-  };
+    protected _queryKeys = {
+      all: () => ["news"],
+      news: () => [...this._queryKeys.all(), "news"],
+      new: () => [...this._queryKeys.all(), "new"],
+    };
 
   protected apiClient;
 

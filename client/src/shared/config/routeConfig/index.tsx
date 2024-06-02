@@ -1,28 +1,27 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { Contacts } from 'pages/Contacts';
-import { WithHeaderLayout } from 'pages/layouts/WithHeaderLayout';
-import { ErrorPage } from 'pages/ErrorPage';
-
-import { NewsList } from 'pages/NewsList/NewsList';
-import { New } from 'pages/New/New';
+import { createBrowserRouter } from "react-router-dom";
+import { Contacts } from "pages/Contacts";
+import { WithHeaderLayout } from "pages/layouts/WithHeaderLayout";
+import { ErrorPage } from "pages/ErrorPage";
+import { New } from "pages/New/New";
+import { MainPage } from "pages/Main/MainPage";
 
 export enum AppRoutes {
-  MAIN = 'main',
-  CONTACTS = 'contacts',
-  KARTING = 'karting',
-  SERVICES = 'services',
-  NOT_FOUND = 'not_found',
-  ARTICLE = 'article'
+  MAIN = "main",
+  CONTACTS = "contacts",
+  KARTING = "karting",
+  SERVICES = "services",
+  NOT_FOUND = "not_found",
+  ARTICLE = "article",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.CONTACTS]: '/contacts',
-  [AppRoutes.KARTING]: '/karting',
-  [AppRoutes.SERVICES]: '/services',
-  [AppRoutes.ARTICLE]: '/article/:id',
-  [AppRoutes.NOT_FOUND]: '*'
-}
+  [AppRoutes.MAIN]: "/",
+  [AppRoutes.CONTACTS]: "/contacts",
+  [AppRoutes.KARTING]: "/karting",
+  [AppRoutes.SERVICES]: "/services",
+  [AppRoutes.ARTICLE]: "/article/:id",
+  [AppRoutes.NOT_FOUND]: "*",
+};
 
 export const router = createBrowserRouter([
   {
@@ -32,11 +31,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <NewsList />,
+        element: <MainPage />,
       },
       {
         path: RoutePath.article,
-        element: <New />
+        element: <New />,
       },
       // {
       //   path: RoutePath.karting,
@@ -48,12 +47,12 @@ export const router = createBrowserRouter([
       // },
       {
         path: RoutePath.contacts,
-        element: <Contacts />
+        element: <Contacts />,
       },
       {
         path: RoutePath.not_found,
-        element: <>NOT FOUND</>
-      }
+        element: <>NOT FOUND</>,
+      },
     ],
   },
   {

@@ -4,7 +4,7 @@ import { YaMap } from "features/YaMap";
 import { Telephone } from "shared/ui/Telephone";
 import { Text } from "shared/ui/Text";
 import cn from "classnames";
-import { ContactsServiceService } from "services/ContactsService";
+import { ContactsService } from "services/ContactsService";
 import { ReactComponent as ClockIcon } from "shared/assets/clock.svg";
 import { ReactComponent as BusIcon } from "shared/assets/bus.svg";
 import { ReactComponent as PointIcon } from "shared/assets/point.svg";
@@ -13,7 +13,7 @@ import cls from "./index.module.css";
 import { BackButton } from "shared/ui/BackButton/BackButton";
 
 export const Contacts = () => {
-  const { data: result } = useQuery(ContactsServiceService.getContactsQuery());
+  const { data: result } = useQuery(ContactsService.getContactsQuery());
   const contacts = result?.data[0].attributes!;
 
   if (!contacts) {
@@ -63,7 +63,11 @@ export const Contacts = () => {
               {openingHours?.map((hours) => (
                 <div key={hours}>
                   {hours.split("&").map((item, index) => (
-                    <Text type={index === 0 ? "semibold" : undefined} className={cls.noMargin} key={item}>
+                    <Text
+                      type={index === 0 ? "semibold" : undefined}
+                      className={cls.noMargin}
+                      key={item}
+                    >
                       {item}
                     </Text>
                   ))}

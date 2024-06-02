@@ -35,4 +35,4 @@ class ContactsServiceClass {
   }
 }
 
-export const ContactsServiceService = new ContactsServiceClass(Contacts);
+export const ContactsService = new ContactsServiceClass(Contacts);
