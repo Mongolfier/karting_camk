@@ -5,7 +5,9 @@ export interface ICarousel {
     attributes: {
       title: string;
       description: string;
-      image: IIMage;
+      image: {
+        data: IIMage;
+      };
     };
     id: number;
   }[];

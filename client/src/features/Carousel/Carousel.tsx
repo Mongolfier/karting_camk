@@ -18,18 +18,30 @@ export const Carousel: FC<CarouselProps> = (props) => {
   }
 
   return (
-    <CarouselReact>
-      {slidesList.map((slide) => {
+    <CarouselReact
+      showStatus={false}
+      showArrows={false}
+      showThumbs={false}
+      swipeable={true}
+      infiniteLoop={true}
+      emulateTouch={true}
+      className={cls.carousel}
+    >
+      {slidesList.map((slide, index) => {
         const { description, image, title } = slide;
-
-        console.log(image.attributes);
-        
         return (
-            <div>
-                <h2>{title}</h2>
-                <img src={`${baseUrl}${image.attributes.url}`} />
-                <p>{description}</p>
-            </div>);
+          <div className={cls.wrapper} key={index}>
+            <h2 className={cls.title}>{title}</h2>
+            <img
+              className={cls.image}
+              src={`${baseUrl}${image.attributes.url}`}
+            />
+            <p
+              dangerouslySetInnerHTML={{ __html: description }}
+              className={cls.description}
+            />
+          </div>
+        );
       })}
     </CarouselReact>
   );

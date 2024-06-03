@@ -1,0 +1,73 @@
+.carousel {
+  width: 100%;
+  height: 642px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 998px !important;
+  height: 642px !important;
+  border-radius: 25px;
+  z-index: 0;
+}
+
+.wrapper {
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 642px;
+}
+
+.title,
+.description {
+  position: relative;
+  z-index: 10;
+}
+
+.description {
+  display: inline-block;
+  margin-top: 50px;
+  text-align: left;
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
+  padding: 50px;
+  width: 37%;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 100px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-style: italic;
+  width: 65%;
+  text-align: left;
+}
+
+:global(.carousel.carousel-slider),
+:global(.slider-wrapper),
+:global(.slider.animated) {
+  height: 100%;
+}
+
+:global(.control-dots) {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+:global(.carousel .control-dots .dot) {
+  width: 12px;
+  height: 12px;
+  background-color: var(--white);
+  opacity: 1;
+
+  &:global(.selected) {
+    background-color: var(--red);
+  }
+}
