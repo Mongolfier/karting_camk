@@ -10,15 +10,13 @@ RUN yarn config set network-timeout 600000 -g && yarn
 ENV PATH /opt/node_modules/.bin:$PATH
 RUN yarn build
 
-FROM node:20-alpine
-RUN apk add --no-cache vips-dev
-ENV NODE_ENV=production
-WORKDIR /opt/
-COPY --from=build /opt/node_modules ./node_modules
-WORKDIR /opt/app
-COPY --from=build /opt/app ./
-RUN yarn add pg
-ENV PATH /opt/node_modules/.bin:$PATH
+# FROM node:20-alpine
+# RUN apk add --no-cache vips-dev
+# ENV NODE_ENV=production
+# WORKDIR /opt/
+# COPY --from=build /opt .
+# RUN yarn add pg
+# ENV PATH /opt/node_modules/.bin:$PATH
 
 EXPOSE 1337
 CMD ["yarn", "start"]
