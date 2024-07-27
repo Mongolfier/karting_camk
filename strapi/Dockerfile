@@ -3,8 +3,10 @@ RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev l
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /opt/
+
+WORKDIR /opt/app
 COPY . .
+
 RUN yarn add node-gyp pg
 RUN yarn config set network-timeout 600000 -g && yarn
 ENV PATH /opt/node_modules/.bin:$PATH

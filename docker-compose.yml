@@ -15,10 +15,10 @@ services:
       JWT_SECRET: 98ih34nv38947hb93n23np9g8h02b
       ADMIN_JWT_SECRET: 0982y49p8ghi35onhg5034h29hb2349b48h3b553
       APP_KEYS: 9238h4v9o345nb3409b-023jbv3o9b0[345b
+      API_TOKEN_SALT: 982352hljg92w8gjsdhg9823gy942gb
       NODE_ENV: production
     volumes:
-      - ./strapi/config:/opt/app/config
-      - ./strapi/public/uploads:/opt/app/public/uploads
+      - ./strapi:/srv/app
     ports:
       - "1337:1337"
     networks:
@@ -38,12 +38,22 @@ services:
     volumes:
       - strapi-data:/var/lib/postgresql/data/ #using a volume
       #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
-
     ports:
       - "5432:5432"
     networks:
       - strapi
-
+  client:
+    container_name: client
+    image: client:test
+    restart: unless-stopped
+    environment:
+      REACT_APP_API_HOST: http://194.87.234.51:1337
+    ports:
+      - "3000:3000"
+    networks:
+      - strapi
+    depends_on:
+      - strapi
 volumes:
   strapi-data:
 
