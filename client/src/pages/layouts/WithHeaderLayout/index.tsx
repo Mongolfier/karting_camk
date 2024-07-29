@@ -25,7 +25,12 @@ export const WithHeaderLayout = () => {
           <main className={cls.content}>
             <Outlet />
 
-            {isBurgerOpen && <BurgerMenu isOpen={isBurgerOpen} />}
+            {isBurgerOpen && (
+              <BurgerMenu
+                isOpen={isBurgerOpen}
+                handleToggleBurgerMenu={handleBurgerClick}
+              />
+            )}
           </main>
         </div>
         <Footer />

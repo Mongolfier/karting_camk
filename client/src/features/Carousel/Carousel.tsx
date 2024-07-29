@@ -25,6 +25,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
       swipeable={true}
       infiniteLoop={true}
       emulateTouch={true}
+      preventMovementUntilSwipeScrollTolerance={true}
       className={cls.carousel}
     >
       {slidesList.map((slide, index) => {

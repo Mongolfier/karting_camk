@@ -50,7 +50,7 @@ export const Footer = () => {
           {isDesktop && <hr className={cls.divider} />}
 
           <Text className={cls.support}>
-            По вопросам пожеланиям и ошибкам на сайте пишите на почту&nbsp;
+            По вопросам, пожеланиям и ошибкам на сайте просьба обращаться на почту&nbsp;
             <a className={cls.link} href={`mailto:${supportEmail}`}>
               {supportEmail}
             </a>
