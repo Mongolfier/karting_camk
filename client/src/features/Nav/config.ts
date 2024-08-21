@@ -8,10 +8,10 @@ export const navConfig: NavConfigIte[] = [
         title: 'Главная',
         link: '/'
     },
-    // {
-    //     title: 'Услуги',
-    //     link: '/services',
-    // },
+    {
+        title: 'Сотрудники',
+        link: '/staff',
+    },
     // {
     //     title: 'Новости',
     //     link: '/karting',

@@ -3,9 +3,9 @@ import { Outlet } from "react-router-dom";
 
 import { Header } from "features/Header";
 import { Footer } from "features/Footer";
+import { BurgerMenu } from "features/BurgerMenu";
 
 import cls from "./index.module.css";
-import { BurgerMenu } from "features/BurgerMenu";
 
 export const WithHeaderLayout = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);

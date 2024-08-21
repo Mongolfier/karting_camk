@@ -100,8 +100,6 @@ export const Contacts = () => {
             <PointIcon className={cn(cls.contactsIcon, cls.busStopIcon)} />
             <Text className={cls.busStop}>{busStop}</Text>
           </div>
-
-          <p></p>
         </div>
 
         <div className={cls.mapWrapper}>

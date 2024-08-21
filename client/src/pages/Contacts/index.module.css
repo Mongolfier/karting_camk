@@ -25,7 +25,7 @@
 }
 
 .block {
-  padding: 45px 75px;  
+  padding: 45px 75px;
 }
 
 .mapWrapper {
@@ -81,7 +81,10 @@
 
 .contactsBlock {
   padding: 50px 0;
-  border-bottom: 1px solid var(--white-100);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--white-100);
+  }
 
   &.scheme {
     display: grid;
@@ -99,7 +102,7 @@
   height: 70%;
   grid-area: dots;
   padding: 18px 0;
-  background-image: url('../../shared/assets/dot.svg');
+  background-image: url("../../shared/assets/dot.svg");
   background-position: center top;
   background-repeat: no-repeat space;
   place-self: center stretch;
