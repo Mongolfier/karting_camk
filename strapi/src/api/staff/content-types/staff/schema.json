@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staffs",
+  "info": {
+    "singularName": "staff",
+    "pluralName": "staffs",
+    "displayName": "Staff",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "pluginOptions": {},
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {}
+    },
+    "responsibility": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "phone": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "workSchedule": {
+      "type": "string",
+      "pluginOptions": {},
+      "required": true
+    },
+    "whatsUp": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

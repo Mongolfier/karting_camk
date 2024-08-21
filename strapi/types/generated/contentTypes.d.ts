@@ -831,7 +831,7 @@ export interface ApiContactContact extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     address: Attribute.String;
@@ -843,7 +843,6 @@ export interface ApiContactContact extends Schema.CollectionType {
     supportEmail: Attribute.Email;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::contact.contact',
       'oneToOne',
@@ -892,6 +891,43 @@ export interface ApiMainCarouselMainCarousel extends Schema.CollectionType {
   };
 }
 
+export interface ApiStaffStaff extends Schema.CollectionType {
+  collectionName: 'staffs';
+  info: {
+    singularName: 'staff';
+    pluralName: 'staffs';
+    displayName: 'Staff';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    fullName: Attribute.String & Attribute.Required;
+    photo: Attribute.Media & Attribute.Required;
+    responsibility: Attribute.String;
+    phone: Attribute.String;
+    workSchedule: Attribute.String & Attribute.Required;
+    whatsUp: Attribute.String;
+    telegram: Attribute.String;
+    email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::staff.staff',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::staff.staff',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -913,6 +949,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::contact.contact': ApiContactContact;
       'api::main-carousel.main-carousel': ApiMainCarouselMainCarousel;
+      'api::staff.staff': ApiStaffStaff;
     }
   }
 }
