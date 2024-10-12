@@ -891,6 +891,38 @@ export interface ApiMainCarouselMainCarousel extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceListServiceList extends Schema.CollectionType {
+  collectionName: 'service_lists';
+  info: {
+    singularName: 'service-list';
+    pluralName: 'service-lists';
+    displayName: 'ServiceList';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Service: Attribute.Component<'service.carousel', true>;
+    serviceName: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-list.service-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-list.service-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStaffStaff extends Schema.CollectionType {
   collectionName: 'staffs';
   info: {
@@ -949,6 +981,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::contact.contact': ApiContactContact;
       'api::main-carousel.main-carousel': ApiMainCarouselMainCarousel;
+      'api::service-list.service-list': ApiServiceListServiceList;
       'api::staff.staff': ApiStaffStaff;
     }
   }

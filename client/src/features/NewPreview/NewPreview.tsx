@@ -3,9 +3,9 @@ import { format } from "date-fns";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { INew } from "model/INews";
 import MultiClamp from "react-multi-clamp";
+import { RoutePath } from "shared/config/routeConfig/routes";
 
 import cls from "./NewPreview.module.css";
-import { RoutePath } from "shared/config/routeConfig";
 import { ReactComponent as EmptyImage } from "shared/assets/photo_placeholder.svg";
 
 export interface ArticlePreviewProps {

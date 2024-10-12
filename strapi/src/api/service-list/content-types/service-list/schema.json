@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_lists",
+  "info": {
+    "singularName": "service-list",
+    "pluralName": "service-lists",
+    "displayName": "ServiceList",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.carousel"
+    },
+    "serviceName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

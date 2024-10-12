@@ -9,7 +9,7 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { LastNews } from "features/LastNews/LastNews";
 import { sortNews } from "utils/sortNews";
 
-export const New = () => {
+const New = () => {
   const { id } = useParams();
   const baseUrl = process.env.REACT_APP_API_HOST;
 
@@ -80,3 +80,5 @@ export const New = () => {
     </section>
   );
 };
+
+export default New;

@@ -1,18 +1,19 @@
-import { Link } from "react-router-dom";
+import cn from "classnames";
+
 import { useQuery } from "@tanstack/react-query";
 import { YaMap } from "features/YaMap";
 import { Telephone } from "shared/ui/Telephone";
 import { Text } from "shared/ui/Text";
-import cn from "classnames";
 import { ContactsService } from "services/ContactsService";
+import { BackButton } from "shared/ui/BackButton/BackButton";
+
 import { ReactComponent as ClockIcon } from "shared/assets/clock.svg";
 import { ReactComponent as BusIcon } from "shared/assets/bus.svg";
 import { ReactComponent as PointIcon } from "shared/assets/point.svg";
 
 import cls from "./index.module.css";
-import { BackButton } from "shared/ui/BackButton/BackButton";
 
-export const Contacts = () => {
+const Contacts = () => {
   const { data: result } = useQuery(ContactsService.getContactsQuery());
   const contacts = result?.data[0].attributes!;
 
@@ -109,3 +110,5 @@ export const Contacts = () => {
     </section>
   );
 };
+
+export default Contacts;

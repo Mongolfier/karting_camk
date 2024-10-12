@@ -10,7 +10,7 @@ import { ReactComponent as WhatsUpIcon } from "shared/assets/whatsUpIcon.svg";
 
 import cls from "./Staff.module.css";
 
-export const Staff = () => {
+const Staff = () => {
   const baseUrl = process.env.REACT_APP_API_HOST;
   const { data: rawStaffList } = useQuery(StaffService.getStaffQuery());
 
@@ -93,3 +93,5 @@ export const Staff = () => {
     </section>
   );
 };
+
+export default Staff;
